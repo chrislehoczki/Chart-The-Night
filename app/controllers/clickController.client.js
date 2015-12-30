@@ -1,6 +1,9 @@
 'use strict';
 
 (function () {
+   
+   console.log("test")
+   
 
    var addButton = document.querySelector('.btn-add');
    var deleteButton = document.querySelector('.btn-delete');
