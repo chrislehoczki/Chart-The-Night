@@ -4,15 +4,19 @@
 
 	<head>
 		<title>A Nightlife Coordination App</title>
-		
+		<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+		<link href="/public/css/normalize.css" rel="stylesheet" type="text/css">
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
 		<link href="/public/css/main.css" rel="stylesheet" type="text/css">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.3/react.js"></script>
     	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.3/react-dom.js"></script>
     	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
     	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    	
 	</head>
 
 	<body>
+		
 		<div class="container">	
 			<div class="login">
 				<a href="/auth/github">
@@ -26,10 +30,10 @@
 		
 		<div id="input"></div>
 		<div id="bars"> </div>
-		<div id="test"> </div>
+	
 		
 	
-		<script type="text/babel" src="controllers/api.js"></script>
+		<script type="text/babel" src="controllers/publicController.js"></script>
 	</body>
 
 </html>

@@ -1,7 +1,7 @@
 'use strict';
 
 var path = process.cwd();
-var ClickHandler = require(path + '/app/controllers/clickHandler.server.js');
+var BarHandler = require(path + '/app/controllers/barHandler.server.js');
 
 module.exports = function (app, passport) {
 
@@ -13,7 +13,7 @@ module.exports = function (app, passport) {
 		}
 	}
 
-	var clickHandler = new ClickHandler();
+	var barHandler = new BarHandler();
 
 	app.route('/')
 		.get(isLoggedIn, function (req, res) {
@@ -50,8 +50,11 @@ module.exports = function (app, passport) {
 			failureRedirect: '/login'
 		}));
 
-	app.route('/api/:id/clicks')
-		.get(isLoggedIn, clickHandler.getClicks)
-		.post(isLoggedIn, clickHandler.addClick)
-		.delete(isLoggedIn, clickHandler.resetClicks);
+
+	app.route('/api/:bar?/')
+		.get(barHandler.getBars)//get all bar data held on system and populate bar data for that eveni
+		.post(barHandler.addBar) //add a new bar for the current evening: add 1 to 1.users and 2.bars
+		.delete(barHandler.deleteBar) //remove yourself from a bar - remove bar from 1.users and 2. bars
+		
+		
 };
