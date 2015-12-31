@@ -2,7 +2,7 @@
 
 var path = process.cwd();
 var BarHandler = require(path + '/app/controllers/barHandler.server.js');
-
+var PublicBarHandler = require(path + '/app/controllers/publicBarHandler.server.js');
 module.exports = function (app, passport) {
 
 	function isLoggedIn (req, res, next) {
@@ -14,6 +14,7 @@ module.exports = function (app, passport) {
 	}
 
 	var barHandler = new BarHandler();
+	var publicBarHandler = new PublicBarHandler();
 
 	app.route('/')
 		.get(isLoggedIn, function (req, res) {
@@ -54,7 +55,8 @@ module.exports = function (app, passport) {
 	app.route('/api/:bar?/')
 		.get(barHandler.getBars)//get all bar data held on system and populate bar data for that eveni
 		.post(barHandler.addBar) //add a new bar for the current evening: add 1 to 1.users and 2.bars
-		.delete(barHandler.deleteBar) //remove yourself from a bar - remove bar from 1.users and 2. bars
+		.delete(barHandler.deleteBar); //remove yourself from a bar - remove bar from 1.users and 2. bars
 		
-		
+	app.route("/public/api/:bar?")
+	.post(publicBarHandler.addPublicBar);
 };

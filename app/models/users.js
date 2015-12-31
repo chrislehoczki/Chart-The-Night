@@ -14,4 +14,8 @@ var User = new Schema({
     bars: Array
 });
 
+
+
 module.exports = mongoose.model('User', User);
+
+
