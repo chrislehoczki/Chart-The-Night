@@ -36,7 +36,7 @@ module.exports = function (passport) {
 					newUser.github.username = profile.username;
 					newUser.github.displayName = profile.displayName;
 					newUser.github.publicRepos = profile._json.public_repos;
-					newUser.bars = "";
+					newUser.bars = {bar: "testBar", date: new Date()};
 					newUser.currentLocation = "Shrewsbury";
 
 					newUser.save(function (err) {
