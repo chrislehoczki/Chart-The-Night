@@ -58,5 +58,7 @@ module.exports = function (app, passport) {
 		.delete(barHandler.deleteBar); //remove yourself from a bar - remove bar from 1.users and 2. bars
 		
 	app.route("/public/api/:bar?")
-	.post(publicBarHandler.addPublicBar);
+	.post(publicBarHandler.addPublicBar)
+	.get(publicBarHandler.getPublicBar)
+	.delete(publicBarHandler.deletePublicBar);
 };
