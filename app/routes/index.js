@@ -3,6 +3,8 @@
 var path = process.cwd();
 var BarHandler = require(path + '/app/controllers/barHandler.server.js');
 var PublicBarHandler = require(path + '/app/controllers/publicBarHandler.server.js');
+
+	//AUTH CHECK FUNCTION
 module.exports = function (app, passport) {
 
 	function isLoggedIn (req, res, next) {
@@ -13,6 +15,7 @@ module.exports = function (app, passport) {
 		}
 	}
 
+	//OBJECTS WITH METHODS FOR INTERACTING WITH DB
 	var barHandler = new BarHandler();
 	var publicBarHandler = new PublicBarHandler();
 
@@ -42,7 +45,7 @@ module.exports = function (app, passport) {
 			res.json(req.user.github);
 		});
 
-	app.route('/auth/github')
+	app.route('/auth/github/')
 		.get(passport.authenticate('github'));
 
 	app.route('/auth/github/callback')
@@ -58,7 +61,7 @@ module.exports = function (app, passport) {
 		.delete(barHandler.deleteBar); //remove yourself from a bar - remove bar from 1.users and 2. bars
 		
 	app.route("/public/api/:bar?")
-	.post(publicBarHandler.addPublicBar)
-	.get(publicBarHandler.getPublicBar)
-	.delete(publicBarHandler.deletePublicBar);
+		.post(publicBarHandler.addPublicBar) //adds one user to specific bar
+		.get(publicBarHandler.getPublicBar) //gets data for specific bar on todays date
+		.delete(publicBarHandler.deletePublicBar); //removes one user from specific bar
 };

@@ -1,6 +1,109 @@
 
+
+/* GENERAL */
+
+
 body {
 	font-family: "Oswald";
+	background-color: #153649;
+	color: black;
+}
+
+h1 {
+	text-align: center;
+	margin-top: 0;
+	padding-top: 30px;
+}
+
+h2 {
+	text-align: center;
+	font-size: 1.3em;
+}
+
+/* JUMBOTRON */
+
+.jumbotron {
+	/* Shades background */
+	background: linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ), url("../img/bar.jpg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 100vh;
+	display: table;
+}
+
+
+.jumbotron h1 { 
+font-size: 6em;
+
+  font-weight: bolder;
+  text-shadow: 3px 3px black;
+  color: white;
+}
+
+.jumbotron h2 {
+  text-shadow: 1px 1px black;
+  color: white;
+}
+
+.jumbotron ul {
+	display: table-cell;
+	vertical-align: middle;
+	padding: 0;
+	list-style-type: none;
+}
+
+/* INDEX PAGE JUMBO */
+
+.index {
+	width: 100%;
+	height: 100px;
+}
+
+#input {
+	width: 200px;
+	margin: 50px auto;
+}
+
+.indexinput {
+	margin-top: 100px;
+}
+
+#input input[type="text"] {
+	width: 200px;
+	text-align: center;
+}
+
+.btn-primary {
+	width: 100px;
+	margin: 20px 50px;
+}
+
+/* NAV */
+
+#welcome {
+	text-align: center;
+}
+
+.nav {
+	width: 50%;
+	margin: 0px auto;
+}
+
+.pull-left {
+	margin-left: 30px;
+}
+
+.nav-tabs > li, .nav-pills > li {
+    float:none;
+    display:inline-block;
+    margin-right: 30px;
+    font-size: 1.5em;
+}
+
+.nav-tabs, .nav-pills {
+    text-align:right;
 }
 
 ul {
@@ -9,29 +112,162 @@ ul {
 	list-style-type: none;
 }
 
+/* BARS */
+
 .notgo {
 	width: 85%;
 	border: 1px solid black;
 	margin: 30px auto;
-	border-color: red;
+	background-color: #276484;
+	min-height: 170px;
 }
 
 .go {
 	width: 85%;
 	border: 1px solid black;
 	margin: 30px auto;
-	border-color: green;
+	background-color: #276484;
+	min-height: 170px;
 }
 
-.barimage .img {
-	display: inline;
+.visitors {
+    text-align: center;
+    margin-top: 0;
+    display: inline;
 
+}
+
+.visitors h2 {
+	    font-size: 1.2em;
+}
+
+.barimg img {
+	display: inline-block;
+  	float: left;
+  	margin: 10px;
 }
 
 .data  {
-	background-color: red;
 	width: 50%;
-	display: inline;
+	display: inline-block;
+	margin: 5px;
+	margin-left: 30px;
+}
 
-	margin: 20px;
+.addBar {
+	display: inline-block;
+	vertical-align: top;
+	margin: 25px;
+	cursor: pointer; 
+	cursor: hand; 
+}
+
+
+.data li {
+  font-size: 1em;
+  margin: 5px 0px;
+  padding: 0px;
+}
+
+.data li h3 {
+  font-size: 2em;
+  margin: 20px 0px;
+}
+
+
+
+/* OVERLAY FOR LOGIN */
+
+#overlay {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(2,34,3,0.5);
+	position: fixed;
+}
+
+#login-prompt {
+	position: fixed;
+	width: 500px;
+	height: 200px;
+	top: 50%;
+	left: 50%;
+	border-radius: 10px;
+	margin-top: -100px; 
+	margin-left: -250px; 
+	background-color: #041a26;
+	text-align: center;
+	border: 1px solid black;
+    -webkit-box-shadow: 0px 1px 38px 27px rgba(0,0,0,0.61);
+  	-moz-box-shadow: 0px 1px 38px 27px rgba(0,0,0,0.61);
+  	box-shadow: 0px 1px 38px 27px rgba(0,0,0,0.61);
+	color: white;
+}
+
+#login-prompt h3 {
+	font-size: 2em;
+}
+
+#login-btn {
+    width: 225px;
+    padding: 7px 5px;
+    background-color: gray;
+    border: 1px solid black;
+    margin-top: 30px;
+}
+
+#login-btn p {
+    margin: 8px 0 0 0;
+    padding: 0;
+    color: white;
+}
+
+#login-btn > img {
+    float: left;
+    margin-left: 10px
+}
+
+
+#long-btn:focus {	/* Remove outline when hovering over button */
+	outline: none;
+	color: white;
+}
+
+#long-btn:visited {	/* Remove outline when hovering over button */
+	outline: none;
+	color: white;
+	background-color: black;
+}
+
+#long-btn:active {	/* Scale the button down by 10% when clicking on button */
+	transform: scale(0.9, 0.9);
+	-webkit-transform: scale(0.9, 0.9);
+	-moz-transform: scale(0.9, 0.9);
+}
+
+/* INFOBOX */
+
+
+
+.infobox {
+
+	margin: 4.16%;
+	display: table;
+	text-align: center;
+}
+
+.infobox h2 {
+	color: black;
+}
+
+.infobox img {
+	max-width: 100%;
+	margin: 10px auto;
+}
+
+/* PROFILE PAGE */
+
+.profile-container {
+	clear: both;
+	text-align: center;
+	font-size: 2em;
 }

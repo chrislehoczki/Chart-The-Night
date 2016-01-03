@@ -3,7 +3,7 @@
 <html>
 
 	<head>
-		<title>A Nightlife Coordination App</title>
+		<title>Chart The Night</title>
 		<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 		<link href="/public/css/normalize.css" rel="stylesheet" type="text/css">
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
@@ -16,27 +16,34 @@
 	</head>
 
 	<body>
-		
-		<button id="barData">TESTING BAR DATA</button>
-		
-		<div class="container">	
-			<div class="login">
-				<a href="/auth/github">
-					<div class="btn" id="login-btn">
-						<img src="/public/img/github_32px.png" alt="github logo" />
-						<p>LOGIN WITH GITHUB</p>
-					</div>
-				</a>
+
+	<div class="jumbotron">
+		<ul>
+		<li><h1>Chart The Night</h1></li>
+		<li><h2>Track The Popular Bars In Your Area</h2></li>
+		<li> <div id="input">
+				<div>
+            		<input type="text"></input>
+            		<button class="btn btn-primary"> Search </button>
+            	</div>
 			</div>
-		</div>
+		</li>
+		</ul>
 		
-		<div id="input"></div>
+	</div>
+	
+		
+		
+		<h1 id="title"> </h1>
+
 		<div id="bars"> </div>
 	
 		
 	
 		<script type="text/babel" src="controllers/publicController.js"></script>
 		<script type="text/javascript" src="common/ajax-functions.js"></script>
+		
+			
 	</body>
 
 </html>
